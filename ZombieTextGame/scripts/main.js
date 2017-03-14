@@ -40,8 +40,12 @@ var beginningScenarios =
         , "Desperate times call for desperate measures. You see a small store up ahead and decide to loot it for goods."
     ];
 
+var weaponList = ["Shovel", "Crossbow", "Baseball Bat", "Shotgun"];
+
+
 function randomNumber(range) {
     return Math.round(Math.random() * range);
 }
 
+var weapon = weaponList[randomNumber(weaponList.length - 1)];
 alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
