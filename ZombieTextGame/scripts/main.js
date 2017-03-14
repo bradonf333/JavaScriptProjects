@@ -35,12 +35,13 @@ After, look for ways you might improve your code!
 
 var beginningScenarios =
     [
-        "You wake up in a hospital. It is very quiet. You tiptoe to the door and peek out.",
-        "You are standing in an open field next to a white house with a boarded door. There is a small mailbox here.",
-        "Desperate times call for desperate measures. You see a small store up ahead and decide to loot it for goods."
+        "You wake up in a hospital. It is very quiet. You tiptoe to the door and peek out."
+        , "You are standing in an open field next to a white house with a boarded door. There is a small mailbox here."
+        , "Desperate times call for desperate measures. You see a small store up ahead and decide to loot it for goods."
     ];
-function randNum(range){
-    Math.round(Math.random());
+
+function randomNumber(range) {
+    return Math.round(Math.random() * range);
 }
 
-alert(beginningScenarios[randNum(beginningScenarios.length - 1)]);
+alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
