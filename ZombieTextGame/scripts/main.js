@@ -56,6 +56,6 @@ alert("Suddenly a zombie jumps out. You ready your " + weapon + " and advance to
 if(survival === 0){
     alert("You try and attack the zombie with your " + weapon + "....... you miss. The zombie bites you and you die.");
 }
-else{
+else {
     alert("You attack the zombie with your " + weapon + ". You killed the zombie!!");
 }
