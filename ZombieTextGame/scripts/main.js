@@ -40,13 +40,13 @@ var beginningScenarios =
         , "Desperate times call for desperate measures. You see a small store up ahead and decide to loot it for goods."
     ];
 
-var weaponList = ["Shovel", "Crossbow", "Baseball Bat", "Shotgun"];
-
-
 function randomNumber(range) {
     return Math.round(Math.random() * range);
 }
 
+var weaponList = ["Shovel", "Crossbow", "Baseball Bat", "Shotgun"];
 var weapon = weaponList[randomNumber(weaponList.length - 1)];
+
 alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
-alert("Being the zombie apocalypse, you decide to search for a weapon first. After looking around you notice a " + weapon + "lying on the ground. You grab it as your weapon.");
+alert("Being the zombie apocalypse, you decide to search for a weapon first. After looking around you notice a " + weapon + " lying on the ground. You grab it as your weapon.");
+alert("Suddenly a zombie jumps out. You ready your " + weapon + " and advance towards the zombie.");
