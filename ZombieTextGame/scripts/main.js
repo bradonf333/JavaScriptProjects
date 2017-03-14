@@ -51,3 +51,10 @@ var survival = randomNumber(2);
 alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
 alert("Being the zombie apocalypse, you decide to search for a weapon first. After looking around you notice a " + weapon + " lying on the ground. You grab it as your weapon.");
 alert("Suddenly a zombie jumps out. You ready your " + weapon + " and advance towards the zombie.");
+
+if(survival === 0){
+    alert("You try and attack the zombie with your " + weapon + "....... you miss. The zombie bites you and you die.");
+}
+else {
+    alert("You attack the zombie with your " + weapon ". You killed the zombie!!");
+}
