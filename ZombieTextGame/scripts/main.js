@@ -39,3 +39,8 @@ var beginningScenarios =
         , "You are standing in an open field next to a white house with a boarded door. There is a small mailbox here."
         , "Desperate times call for desperate measures. You see a small store up ahead and decide to loot it for goods."
     ];
+function randNum(){
+    Math.round(Math.random());
+}
+
+alert(beginningScenarios[1]);
