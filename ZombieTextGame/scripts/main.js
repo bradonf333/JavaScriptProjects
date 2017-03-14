@@ -44,17 +44,18 @@ function randomNumber(range) {
     return Math.round(Math.random() * range);
 }
 
-var weaponList = ["Shovel", "Crossbow", "Baseball Bat", "Shotgun"];
+var weaponList = ["shovel", "cossbow", "baseball bat", "shotgun"];
 var weapon = weaponList[randomNumber(weaponList.length - 1)];
 var survival = randomNumber(2);
 
 alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
 alert("Being the zombie apocalypse, you decide to search for a weapon first. After looking around you notice a " + weapon + " lying on the ground. You grab it as your weapon.");
+
 alert("Suddenly a zombie jumps out. You ready your " + weapon + " and advance towards the zombie.");
 
 if(survival === 0){
     alert("You try and attack the zombie with your " + weapon + "....... you miss. The zombie bites you and you die.");
 }
-else {
-    alert("You attack the zombie with your " + weapon ". You killed the zombie!!");
+else{
+    alert("You attack the zombie with your " + weapon + ". You killed the zombie!!");
 }
