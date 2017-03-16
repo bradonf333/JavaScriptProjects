@@ -1,17 +1,9 @@
-/*
--Set the stage/Intro
--Name Your Character
--Choose a class
--Scenario + Options
--Class check vs option requirements
--Outcome
 
-*/
 var outcome;
 
 window.alert("One day you wake up and the world as you know has ended.  The dead come to life and prey on the living. There is no hope, no cure, only survival.  Welcome to the zombie apocalypse.");
-var beginningScenarios = ["You wake up in a hospital.  It is eerily quiet.  You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures.  You see a small convenience store up ahead and decide to loot it for goods."];
 
+var beginningScenarios = ["You wake up in a hospital.  It is eerily quiet.  You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures.  You see a small convenience store up ahead and decide to loot it for goods."];
 
 function randomNumber(range) {
     "use strict";
@@ -20,9 +12,11 @@ function randomNumber(range) {
     }
 }
 
+// Generate a random beginning
 window.alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
 
 
+// Create character
 var character = {
     health: 5,
     strength: 0,
@@ -32,6 +26,7 @@ var character = {
 
 };
 
+// Make sure character is named or give default name
 if (!character.name) {
     character.name = window.prompt("I don't know what to call you if you don't enter a name. If you don't answer I will be forced to name you myself...Last chance. What is your name?");
 
@@ -42,6 +37,7 @@ if (!character.name) {
 
 }
 
+// Assign attributes based on class chosen
 if (character.characterClass === "soldier") {
     character.strength = 5;
 }
@@ -52,8 +48,10 @@ if (character.characterClass === "doctor") {
     character.health = 8;
 }
 
+// User decides to attack or sneak
 var choice = window.prompt("The brave adventurer and former " + character.characterClass + " " + character.name + " enters a store for some loot.  You notice a zombie slowly shuffling around amongst the destruction. What action shall you take? Attack, or attempt to sneak by the zombie? ").toLowerCase();
 
+// Attack the zombie. Gives different scenarios based on the class chosen
 if (choice === "attack") {
     if (character.strength === 5) {
         window.alert("Using only your bare hands, you slay that zombie! Success! You loot the store for goods and find an axe, a pack of batteries, and three cans of Beanie Weenies.");
@@ -79,6 +77,7 @@ if (choice === "attack") {
     }
 }
 
+// Sneak passed the zombie. Gives different scenarios based on class
 if (choice === "sneak" || choice === "sneak by the zombie") {
     if (character.stealth === 5) {
         window.alert("You sneak by the zombie, you clever bastard.");
@@ -95,6 +94,7 @@ if (choice === "sneak" || choice === "sneak by the zombie") {
     }
 }
 
+// Final outcome
 if (outcome === "lose") {
     window.alert("You lose!");
 } else if (outcome === "win") {
