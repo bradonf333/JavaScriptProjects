@@ -64,7 +64,7 @@ if (choice === "attack") {
             window.alert("The zombie tackles you scratching and clawing you to the ground.");
             window.alert("You hit the ground with the zombie on top of you, hurting your leg. You look to your left and see a sharp piece of glass. You grab the glass and stab the zombie in the head.")
             character.health -= 5;
-            window.alert("You role the zombie off you and get up. You only have " + character.health + " health left and you can barely walk. But get up and loot the store, finding food and a first aid kit.");
+            window.alert("You roll the zombie off you and get up. You only have " + character.health + " health left and you can barely walk. But get up and loot the store, finding food and a first aid kit.");
             outcome = "win";
         } else if (character.characterClass === "politician") {
             window.alert("Being a " + character.characterClass + " you quickly realize you dont have the strength to fight the zombie. Scared out of your mind you try to turn and run from the zombie, only to trip over some books on the ground.");
