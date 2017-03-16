@@ -10,12 +10,11 @@ var myCoffee = {
     milk: true,
     
     // Method -#Lesson2
-    reheat: function(){
-        if(myCoffee.temperature != "cold"){
+    reheat: function () {
+        if (myCoffee.temperature !== "cold") {
             myCoffee.temperature = "cold";
             alert("Your coffee has been iced!");
-        }
-        else {
+        } else {
             alert("Your coffee is already cold!");
         }
     }
@@ -68,7 +67,7 @@ alert(Danny.name);
 /*---------------------------------
     -- Lesson 5 - Global Object --
  ---------------------------------*/
-function sayHello(){
+function sayHello() {
     alert("Hello using the alert command");
     window.alert("Hello using the window.alert command");
 }
