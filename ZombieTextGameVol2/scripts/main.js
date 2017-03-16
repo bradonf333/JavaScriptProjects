@@ -49,7 +49,7 @@ if (character.characterClass === "politician") {
     character.stealth = 5;
 }
 if (character.characterClass === "doctor") {
-    character.health += 7;
+    character.health = 8;
 }
 
 var choice = window.prompt("The brave adventurer and former " + character.characterClass + " " + character.name + " enters a store for some loot.  You notice a zombie slowly shuffling around amongst the destruction. What action shall you take? Attack, or attempt to sneak by the zombie? ").toLowerCase();
@@ -66,7 +66,7 @@ if (choice === "attack") {
             window.alert("The zombie tackles you scratching and clawing you to the ground.");
             window.alert("You hit the ground with the zombie on top of you, hurting your leg. You look to your left and see a sharp piece of glass. You grab the glass and stab the zombie in the head.")
             character.health -= 5;
-            window.alert("You role the zombie off you and get up. You only have " + character.health + " left and you can barely walk. But get up and loot the store, finding food and a first aid kit.");
+            window.alert("You role the zombie off you and get up. You only have " + character.health + " health left and you can barely walk. But get up and loot the store, finding food and a first aid kit.");
             outcome = "win";
         } else {
             outcome = "lose";
