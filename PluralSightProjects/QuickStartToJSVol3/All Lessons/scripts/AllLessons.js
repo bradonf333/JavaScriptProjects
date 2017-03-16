@@ -101,4 +101,3 @@ alert(anotherExample);
 // globalExample is reachable here because in the alertExample function we did not use the var keywor
 // This is very bad and should never be done in practice.
 alert(globalExample);
-
