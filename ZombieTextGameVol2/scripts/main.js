@@ -49,7 +49,7 @@ if (character.characterClass === "politician") {
   character.stealth = 5;
 }
 if (character.characterClass === "doctor") {
-  character.health = 7;
+  character.health += 7;
 }
 
 var choice = window.prompt("The brave adventurer and former " + character.characterClass + " " + character.name + " enters a store for some loot.  You notice a zombie slowly shuffling around amongst the destruction. What action shall you take? Attack, or attempt to sneak by the zombie? ").toLowerCase();
@@ -60,9 +60,18 @@ if (choice === "attack") {
     outcome = "win";
     character.strength++;
   } else if (character.strength <= 5) {
-    window.alert("You fearlessly charge the zombie with all your strength.  Using your mighty powers you crush thy foe as if it were a sheet of paper you needed to shred.");
-    window.alert("Just kidding. You are immediately bitten by the zombie and die. But not all is lost -- if time spent together makes one friends, then you and the zombie become best friends, and live together for eternity. The end.");
-    outcome = "lose";
+    window.alert("You charge the zombie with all your strength....");
+      if (character.characterClass === "doctor") {
+          window.alert("Being a " + character.characterClass + " you do not have the required strength to kill the zombie.");
+          window.alert("The zombie tackles you scratching and clawing you to the ground.");
+          window.alert("You hit the ground with the zombie on top of you, hurting your leg. You look to your left and see a sharp piece of glass. You grab the glass and stab the zombie in the head.")
+
+          outcome = "win";
+      }
+      else {
+          outcome = "lose";
+      }
+
   }
 }
 
