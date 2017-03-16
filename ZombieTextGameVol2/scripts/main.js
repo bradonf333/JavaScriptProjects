@@ -60,7 +60,7 @@ if (choice === "attack") {
         outcome = "win";
         character.strength++;
     } else if (character.strength <= 5) {
-        window.alert("You charge the zombie with all your strength....");
+        window.alert("You charge the zombie with everything you have....");
         if (character.characterClass === "doctor") {
             window.alert("Being a " + character.characterClass + " you do not have the required strength to kill the zombie.");
             window.alert("The zombie tackles you scratching and clawing you to the ground.");
@@ -68,7 +68,11 @@ if (choice === "attack") {
             character.health -= 5;
             window.alert("You role the zombie off you and get up. You only have " + character.health + " health left and you can barely walk. But get up and loot the store, finding food and a first aid kit.");
             outcome = "win";
-        } else {
+        } else if (character.characterClass === "politician") {
+            window.alert("Being a " + character.characterClass + " you quickly realize you dont have the strength to fight the zombie. Scared out of your mind you try to turn and run from the zombie, only to trip over some books on the ground.");
+            window.alert("You get up as quickly as you can but the zombie is right behind you and lunges at you....");
+            window.alert("You have no weapon, you swing a horrible punch at the zombie, missing terribly");
+            window.alert("The zombie grabs your arm and bites a huge chunk out of it. You fall to the ground in pain. The zombie falls on top of you and bites your neck....");
             outcome = "lose";
         }
 
