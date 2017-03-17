@@ -77,14 +77,18 @@ function sneakZombie(storyProgress) {
     this.storyProgress = storyProgress;
     if (player.stealth === 5) {
         storyHTML[storyProgress] = "Being a " + player.charClass + " you sneak right passed the zombie.<br>You grab some supplies off the ground including a can of refried beans, some old bottle of soda and a rusty pocket knife .";
-    }
-    else {
+    } else {
         storyHTML[storyProgress] = "You try to slip by the zombie, but you accidentally stumble over a box of glass soda bottles, alerting the zombie of your existence. It slowly turns its head and shuffles towards you.";
-        if(player.charClass === "soldier") {
+        if (player.charClass === "soldier") {
             storyHTML[storyProgress] += "<br><br>The zombie is much faster than you thought. He is running at you. Being a " + player.charClass + " you are not afraid. You stand your ground as the zombie rushes towards you.<br><br>You take 3 rushing steps towards the zombie, jumping into the air feet first. You drop kick the zombie right in the head. The zombie flies backwards into the air and lands flat on the ground.<br><br>You grab a shovel laying on the ground and smash the zombie.<br><br>Feeling stupid for trying to sneak passed the zombie when you are a " + player.charClass + " you get up realize you should have just attacked him from the beginning. As you get up you look around for supplies. You find a motocross helmet, an awesome old dirty levi jacket and a whole box of roasted almonds.";
             outcome = "win";
         } else {
-         
+            storyHTML[storyProgress] += "<br><br> The zombie is running towards you, much faster than you ever imagined. Being a " + player.charClass + " you realize you are not the sneakiest or the strongest but you are smart. You try to think of something quick to get away from the zombie.";
+            // 1 in 3 chance of living
+            var liveRatio = randomNumber(3);
+            if(liveRatio === 3) {
+                storyHTML[storyProgress] += "<br><br>You scan your surroundings and see a huge book shelf barely staying upright. The zombie is closing in on you, you better do something fast. As the zombie is just about to grab you, you jump to the side of the book shelf grabbing the top of it.<br><br>As the zombie just barely misses you the book shelf lands right on top of the zombie pinning him to the ground.<br><br>As the zombie is stuck there scratching and clawing you smash his head.<br><br>When you scanned the area earlier you noticed a cool looking book laying on the ground. You grab the book and a couple of other supplies and head on your way.";
+            }
         }
     }
 }
@@ -129,8 +133,7 @@ function GenerateInnerHTMLStory() {
             choice = document.getElementById("playerChoice").value;
             if (choice === "attack") {
                 attackZombie(storyProgress);
-            }
-            else {
+            } else {
                 sneakZombie(storyProgress);
             }
             break;
