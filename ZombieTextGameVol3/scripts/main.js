@@ -21,7 +21,7 @@ var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You ti
 var beginningPlace = ["hospital", "white house", "store"];
 
 // List of the main story. Used kind of like a book, each element is a differnt part of the story
-var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former ", "strengthAttack"];
+var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former ", "action?"];
 
 // Returns a random number in the given range
 function randomNumber(range) {
