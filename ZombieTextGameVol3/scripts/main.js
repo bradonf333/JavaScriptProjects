@@ -55,7 +55,6 @@ function Character(name, health, strength, stealth, charClass) {
 // Tries to attack the zombie
 function attackZombie(storyProgress) {
     this.storyProgress = storyProgress;
-    alert(player.strength);
     if (player.strength === 5) {
         storyHTML[storyProgress] = "You run towards the zombie hitting it and knocking it over. You look to your right and see a brick laying on the ground....<br><br>You pick up the brick and hit the zombie in the head.<br>You have killed the zombie with your strength.<br><br>You look up and see a baseball bat, pack of beef jerky and some sunglasses. You grab them all and head on your way. Knowing your the baddest man around.";
         outcome = "win";
