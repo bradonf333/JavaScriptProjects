@@ -75,6 +75,12 @@ function attackZombie(storyProgress) {
 // Tries to sneak by the zombie
 function sneakZombie(storyProgress) {
     this.storyProgress = storyProgress;
+    if (character.stealth === 5) {
+        // Add something here to sneak passed zombie
+    }
+    else {
+         storyHTML[storyProgress] = "You try to slip by the zombie, but you accidentally stumble over a can of Beanie Weenies, alerting the zombie of your existence. It slowly turns its head and shuffles towards you.";
+    }
 }
 
 // Add event listener to the Next Button
@@ -117,6 +123,9 @@ function GenerateInnerHTMLStory() {
             choice = document.getElementById("playerChoice").value;
             if (choice === "attack") {
                 attackZombie(storyProgress);
+            }
+            else {
+                sneakZombie(storyProgress);
             }
             break;
     }
