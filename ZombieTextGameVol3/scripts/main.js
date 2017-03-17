@@ -33,6 +33,9 @@ function Character(name, health, strength, stealth, charClass) {
     this.charClass = charClass;
 }
 
+// Add event listener to the Next Button
+document.getElementById("nextBtn").addEventListener("click", GenerateInnerHTMLStory);
+
 // Generate a random beginning
 window.alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
 
