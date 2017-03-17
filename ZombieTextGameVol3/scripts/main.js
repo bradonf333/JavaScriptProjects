@@ -76,10 +76,16 @@ function attackZombie(storyProgress) {
 function sneakZombie(storyProgress) {
     this.storyProgress = storyProgress;
     if (player.stealth === 5) {
-        storyHTML[storyProgress] = "Being a " + player.charClass + " you sneak right passed the zombie.<br>You grab some supplies off the ground including a can of refried beans and an old soda can.";
+        storyHTML[storyProgress] = "Being a " + player.charClass + " you sneak right passed the zombie.<br>You grab some supplies off the ground including a can of refried beans, some old bottle of soda and a rusty pocket knife .";
     }
     else {
-         storyHTML[storyProgress] = "You try to slip by the zombie, but you accidentally stumble over a box of glass soda bottles, alerting the zombie of your existence. It slowly turns its head and shuffles towards you.";
+        storyHTML[storyProgress] = "You try to slip by the zombie, but you accidentally stumble over a box of glass soda bottles, alerting the zombie of your existence. It slowly turns its head and shuffles towards you.";
+        if(player.charClass === "soldier") {
+            storyHTML[storyProgress] += "<br><br>The zombie is much faster than you thought. He is running at you. Being a " + player.charClass + " you are not afraid. You stand your ground as the zombie rushes towards you.<br><br>You take 3 rushing steps towards the zombie, jumping into the air feet first. You drop kick the zombie right in the head. The zombie flies backwards into the air and lands flat on the ground.<br><br>You grab a shovel laying on the ground and smash the zombie.<br><br>Feeling stupid for trying to sneak passed the zombie when you are a " + player.charClass + " you get up realize you should have just attacked him from the beginning. As you get up you look around for supplies. You find a motocross helmet, an awesome old dirty levi jacket and a whole box of roasted almonds.";
+            outcome = "win";
+        } else {
+         
+        }
     }
 }
 
