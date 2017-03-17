@@ -24,13 +24,13 @@ function randomNumber(range) {
     }
 }
 
-var beginningScenarios = ["You wake up in a hospital.  It is eerily quiet.  You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures.  You see a small convenience store up ahead and decide to loot it for goods."];
-
-function randomNumber(range) {
-    "use strict";
-    if (typeof range === "number") {
-        return Math.round(Math.random() * range);
-    }
+// Object Constructor
+function Character(name, health, strength, stealth, charClass) {
+    this.name = name;
+    this.health = health;
+    this.strength = strength;
+    this.stealth = stealth;
+    this.charClass = charClass;
 }
 
 // Generate a random beginning
