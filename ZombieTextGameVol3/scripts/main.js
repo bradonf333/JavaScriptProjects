@@ -18,7 +18,7 @@ var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You ti
 
 var beginningPlace = ["hospital", "white house", "store"];
 
-var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former "];
+var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former ", "attackStrength5"];
 
 function randomNumber(range) {
     "use strict";
@@ -40,6 +40,12 @@ function Character(name, health, strength, stealth, charClass) {
     this.strength = strength;
     this.stealth = stealth;
     this.charClass = charClass;
+}
+
+function attackZombie() {
+    if (player.strength === 5) {
+        storyHTML[storyProgress] = "You run towards the zombie hitting it and knocking it over. You look to your right and see a brick laying on the ground....<br><br>You pick up the brick and hit the zombie in the head.<br>You have killed the zombie with your strength.<br><br>You look up and see a baseball bat, pack of beef jerky and some sunglasses. You grab them all and head on your way.";
+    }
 }
 
 // Add event listener to the Next Button
@@ -69,7 +75,15 @@ function GenerateInnerHTMLStory() {
             storyHTML[storyProgress] = beginningScenarios[randBegin];
             break;
         case 4:
-            storyHTML[storyProgress] += (player.charClass + " " + player.name + " enters the " + beginningPlace[randBegin] + " for some loot.  You notice a zombie slowly shuffling around amongst the destruction. <br>What action do you take?<br><b>Attack</b>, or attempt to <b>sneak</b> by the zombie?" + createInputBox("text", "randText"));
+            // User decides to attack or sneak
+            storyHTML[storyProgress] += (player.charClass + " " + player.name + " enters the " + beginningPlace[randBegin] + " for some loot.  You notice a zombie slowly shuffling around amongst the destruction. <br><br>What action do you take?<br><br><b>Attack</b>, or attempt to <b>sneak</b> by the zombie?" + createInputBox("text", "playerChoice"));
+            break;
+        case 5:
+            choice = document.getElementById("playerChoice").value;
+            alert(choice);
+            if (choice === "attack"){
+                attackZombie();
+            }
             break;
     }
 
@@ -90,10 +104,8 @@ if (!character.name) {
     }
 
 }
-*//*
-// User decides to attack or sneak
-var choice = window.prompt("The brave adventurer and former " + player.charClass + " " + player.name + " enters the " + beginningPlace[randBegin] + " for some loot.  You notice a zombie slowly shuffling around amongst the destruction. What action shall you take? Attack, or attempt to sneak by the zombie? ");
-
+*/
+/*
 // Attack the zombie. Gives different scenarios based on the class chosen
 if (choice === "attack") {
     if (character.strength === 5) {
