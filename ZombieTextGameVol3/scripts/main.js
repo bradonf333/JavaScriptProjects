@@ -38,16 +38,39 @@ document.getElementById("nextBtn").addEventListener("click", GenerateInnerHTMLSt
 
 // Generates the story in the webpage using HTML
 function GenerateInnerHTMLStory() {
+
+    switch (storyProgress) {
+        case 2:
+            name = document.getElementById("charName").value;
+            name = name.replace(regexCamCase, name[0].toUpperCase());
+            charClass = document.getElementById("charClass").value;
+            if (charClass === "soldier") {
+                strength = 5;
+            }
+            if (charClass === "politician") {
+                stealth = 5;
+            }
+            if (charClass === "doctor") {
+                health = 8;
+            }
+            player = new Character(name, health, strength, stealth, charClass);
+            storyHTML[storyProgress] += (player.name + "<p>Lets begin....</p>");
+            break;
+        case 3:
+            var randNum = randomNumber(beginningScenarios.length - 1);
+            storyHTML[storyProgress] = beginningScenarios;
+            break;
+    }
+
     document.getElementById("demo").innerHTML = storyHTML[storyProgress];
     //document.getElementById("demo").innerHTML += "<br>" + storyProgress;
     storyProgress++;
 }
 
-// Generate a random beginning
-window.alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
+// Generate a random beginning window.alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
 
 
-// Create character
+/* Create character
 var character = {
     health: 5,
     strength: 0,
@@ -131,3 +154,4 @@ if (outcome === "lose") {
 } else if (outcome === "win") {
     window.alert("You win!");
 }
+*/
