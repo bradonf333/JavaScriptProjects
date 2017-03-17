@@ -74,7 +74,7 @@ function attackZombie(storyProgress) {
 
 // Tries to sneak by the zombie
 function sneakZombie(storyProgress) {
-
+    this.storyProgress = storyProgress;
 }
 
 // Add event listener to the Next Button
@@ -140,32 +140,6 @@ if (!character.name) {
 }
 */
 /*
-// Attack the zombie. Gives different scenarios based on the class chosen
-if (choice === "attack") {
-    if (character.strength === 5) {
-        window.alert("Using only your bare hands, you slay that zombie! Success! You loot the store for goods and find an axe, a pack of batteries, and three cans of Beanie Weenies.");
-        outcome = "win";
-        character.strength++;
-    } else if (character.strength <= 5) {
-        window.alert("You charge the zombie with everything you have....");
-        if (character.characterClass === "doctor") {
-            window.alert("Being a " + character.characterClass + " you do not have the required strength to kill the zombie.");
-            window.alert("The zombie tackles you scratching and clawing you to the ground.");
-            window.alert("You hit the ground with the zombie on top of you, hurting your leg. You look to your left and see a sharp piece of glass. You grab the glass and stab the zombie in the head.")
-            character.health -= 5;
-            window.alert("You roll the zombie off you and get up. You only have " + character.health + " health left and you can barely walk. But get up and loot the store, finding food and a first aid kit.");
-            outcome = "win";
-        } else if (character.characterClass === "politician") {
-            window.alert("Being a " + character.characterClass + " you quickly realize you dont have the strength to fight the zombie. Scared out of your mind you try to turn and run from the zombie, only to trip over some books on the ground.");
-            window.alert("You get up as quickly as you can but the zombie is right behind you and lunges at you....");
-            window.alert("You have no weapon, you swing a horrible punch at the zombie, missing terribly");
-            window.alert("The zombie grabs your arm and bites a huge chunk out of it. You fall to the ground in pain. The zombie falls on top of you and bites your neck....");
-            outcome = "lose";
-        }
-
-    }
-}
-
 // Sneak passed the zombie. Gives different scenarios based on class
 if (choice === "sneak" || choice === "sneak by the zombie") {
     if (character.stealth === 5) {
