@@ -11,15 +11,19 @@ var player;
 var regexCamCase = /b/i;
 var randBegin;
 
+// Beginning HTML
 document.getElementById("mainText").innerHTML = "One day you wake up and the world as you know has ended.  The dead come to life and prey on the living. There is no hope, no cure, only survival.  Welcome to the zombie apocalypse.";
 
-// Functions
+// List to hold all beginning scenarios
 var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures. You see a small convenience store up ahead and decide to loot it for goods."];
 
+// List of beginning scenario places
 var beginningPlace = ["hospital", "white house", "store"];
 
+// List of the main story. Used kind of like a book, each element is a differnt part of the story
 var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former ", "strengthAttack"];
 
+// Returns a random number in the given range
 function randomNumber(range) {
     "use strict";
     if (typeof range === "number") {
@@ -27,6 +31,12 @@ function randomNumber(range) {
     }
 }
 
+/*
+ *=======================================
+ *           -- Functions --
+ *=======================================
+ */
+// Dynamically creates an input in HTML
 function createInputBox(type, name, id) {
     this.type = type;
     this.name = name;
@@ -42,6 +52,7 @@ function Character(name, health, strength, stealth, charClass) {
     this.charClass = charClass;
 }
 
+// Tries to attack the zombie
 function attackZombie(storyProgress) {
     this.storyProgress = storyProgress;
     alert(player.strength);
@@ -62,6 +73,7 @@ function attackZombie(storyProgress) {
     }
 }
 
+// Tries to sneak by the zombie
 function sneakZombie(storyProgress) {
 
 }
@@ -69,7 +81,7 @@ function sneakZombie(storyProgress) {
 // Add event listener to the Next Button
 document.getElementById("nextBtn").addEventListener("click", GenerateInnerHTMLStory);
 
-// Generates the story in the webpage using HTML
+// Generates the story in the webpage using HTML depending on what part of the story we are at
 function GenerateInnerHTMLStory() {
     switch (storyProgress) {
         case 2:
