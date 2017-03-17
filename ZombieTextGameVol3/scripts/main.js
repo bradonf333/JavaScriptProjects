@@ -15,6 +15,8 @@ document.getElementById("mainText").innerHTML = "One day you wake up and the wor
 // Functions
 var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures. You see a small convenience store up ahead and decide to loot it for goods."];
 
+var beginningPlace = ["hospital", "white house", "store"];
+
 var storyHTML = ["Lets get your information so we can start!", "Enter your Name:<br> <input type='text' name='FirstName' id='charName'/><p>Enter Your class: <b>soldier, doctor, politician</b><br><input type='text' name='charClass' id='charClass'/>", "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story"];
 
 function randomNumber(range) {
@@ -59,6 +61,8 @@ function GenerateInnerHTMLStory() {
             var randNum = randomNumber(beginningScenarios.length - 1);
             storyHTML[storyProgress] = beginningScenarios[randNum];
             break;
+        case 4:
+            break;
     }
 
     document.getElementById("mainText").innerHTML = storyHTML[storyProgress];
@@ -68,17 +72,7 @@ function GenerateInnerHTMLStory() {
 
 // Generate a random beginning window.alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
 
-
-/* Create character
-var character = {
-    health: 5,
-    strength: 0,
-    stealth: 0,
-    name: window.prompt("What is your name?"),
-    characterClass: window.prompt("These times test the strengths of our character. What were you before the war? (Choose from: soldier, doctor, or politician)").toLowerCase()
-
-};
-
+/*
 // Make sure character is named or give default name
 if (!character.name) {
     character.name = window.prompt("I don't know what to call you if you don't enter a name. If you don't answer I will be forced to name you myself...Last chance. What is your name?");
@@ -89,18 +83,7 @@ if (!character.name) {
     }
 
 }
-
-// Assign attributes based on class chosen
-if (character.characterClass === "soldier") {
-    character.strength = 5;
-}
-if (character.characterClass === "politician") {
-    character.stealth = 5;
-}
-if (character.characterClass === "doctor") {
-    character.health = 8;
-}
-
+*/
 // User decides to attack or sneak
 var choice = window.prompt("The brave adventurer and former " + character.characterClass + " " + character.name + " enters a store for some loot.  You notice a zombie slowly shuffling around amongst the destruction. What action shall you take? Attack, or attempt to sneak by the zombie? ").toLowerCase();
 
