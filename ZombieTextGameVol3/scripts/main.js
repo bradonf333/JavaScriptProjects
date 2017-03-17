@@ -14,6 +14,8 @@ var randBegin;
 // Beginning HTML
 document.getElementById("mainText").innerHTML = "One day you wake up and the world as you know has ended.  The dead come to life and prey on the living. There is no hope, no cure, only survival.  Welcome to the zombie apocalypse.";
 
+//document.getElementById("mainText").innerHTML = 
+
 // List to hold all beginning scenarios
 var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures. You see a small convenience store up ahead and decide to loot it for goods."];
 
@@ -21,7 +23,7 @@ var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You ti
 var beginningPlace = ["hospital", "white house", "store"];
 
 // List of the main story. Used kind of like a book, each element is a differnt part of the story
-var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former ", "action?"];
+var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former ", "action?", "endScene"];
 
 // Returns a random number in the given range
 function randomNumber(range) {
@@ -56,7 +58,7 @@ function Character(name, health, strength, stealth, charClass) {
 function attackZombie(storyProgress) {
     this.storyProgress = storyProgress;
     if (player.strength === 5) {
-        storyHTML[storyProgress] = "You run towards the zombie hitting it and knocking it over. You look to your right and see a brick laying on the ground....<br><br>You pick up the brick and hit the zombie in the head.<br>You have killed the zombie with your strength.<br><br>You look up and see a baseball bat, pack of beef jerky and some sunglasses. You grab them all and head on your way. Knowing your the baddest man around.";
+        storyHTML[storyProgress] = "You run towards the zombie hitting it and knocking it over. You look to your right and see a brick laying on the ground....<br><br>You pick up the brick and hit the zombie in the head.<br>You have killed the zombie with your strength.<br><br>You look up and see a baseball bat, pack of beef jerky and some sunglasses.";
         outcome = "win";
     } else if (player.strength < 5) {
         storyHTML[storyProgress] = "You charge the zombie with everything you have....<br>";
@@ -80,14 +82,19 @@ function sneakZombie(storyProgress) {
     } else {
         storyHTML[storyProgress] = "You try to slip by the zombie, but you accidentally stumble over a box of glass soda bottles, alerting the zombie of your existence. It slowly turns its head and shuffles towards you.";
         if (player.charClass === "soldier") {
-            storyHTML[storyProgress] += "<br><br>The zombie is much faster than you thought. He is running at you. Being a " + player.charClass + " you are not afraid. You stand your ground as the zombie rushes towards you.<br><br>You take 3 rushing steps towards the zombie, jumping into the air feet first. You drop kick the zombie right in the head. The zombie flies backwards into the air and lands flat on the ground.<br><br>You grab a shovel laying on the ground and smash the zombie.<br><br>Feeling stupid for trying to sneak passed the zombie when you are a " + player.charClass + " you get up realize you should have just attacked him from the beginning. As you get up you look around for supplies. You find a motocross helmet, an awesome old dirty levi jacket and a whole box of roasted almonds.";
+            storyHTML[storyProgress] += "<br><br>The zombie is much faster than you thought. He is running at you. Being a " + player.charClass + " you are not afraid. You stand your ground as the zombie rushes towards you.<br><br>You take 3 rushing steps towards the zombie, jumping into the air feet first. You drop kick the zombie right in the head. The zombie flies backwards into the air and lands flat on the ground.<br><br>You grab a shovel laying on the ground and smash the zombie.<br><br>Feeling stupid for trying to sneak passed the zombie when you are a " + player.charClass + " you get up and realize you should have just attacked him from the beginning. As you get up you look around for supplies. You find a motocross helmet, an awesome old dirty levi jacket and a whole box of roasted almonds.";
             outcome = "win";
         } else {
             storyHTML[storyProgress] += "<br><br> The zombie is running towards you, much faster than you ever imagined. Being a " + player.charClass + " you realize you are not the sneakiest or the strongest but you are smart. You try to think of something quick to get away from the zombie.";
+
             // 1 in 3 chance of living
             var liveRatio = randomNumber(3);
-            if(liveRatio === 3) {
+
+            if (liveRatio === 3) {
                 storyHTML[storyProgress] += "<br><br>You scan your surroundings and see a huge book shelf barely staying upright. The zombie is closing in on you, you better do something fast. As the zombie is just about to grab you, you jump to the side of the book shelf grabbing the top of it.<br><br>As the zombie just barely misses you the book shelf lands right on top of the zombie pinning him to the ground.<br><br>As the zombie is stuck there scratching and clawing you smash his head.<br><br>When you scanned the area earlier you noticed a cool looking book laying on the ground. You grab the book and a couple of other supplies and head on your way.";
+            } else {
+                storyHTML[storyProgress] += "<br><br>You are panicking you can't seem to find anything that will help you. As you turn your head back the zombie you realize he is much closer than you expected. He lunges at you as you try to jump out of the way......<br><br>You are too slow, the zombie grabs your leg and bites it.<br>You kick the zombie off with your other foot, but it is too late. You have been bitten!!";
+                outcome = "lose";
             }
         }
     }
@@ -135,6 +142,17 @@ function GenerateInnerHTMLStory() {
                 attackZombie(storyProgress);
             } else {
                 sneakZombie(storyProgress);
+            }
+            break;
+        case 6:
+            if (outcome === "win") {
+                switch (player.charClass) {
+                    case "soldier":
+                        storyHTML[storyProgress] = "You grab all the supplies and head on your way. Knowing you're the baddest " + "soldier" + " around.<br><br><font size=22>YOU WIN!!</font><br><br><font size=2>Don't feel too good about yourself though, the soldier wins in all scenarios...</font><br><br>hint..hint..Play again?";
+                        break;
+                }
+            } else {
+
             }
             break;
     }
