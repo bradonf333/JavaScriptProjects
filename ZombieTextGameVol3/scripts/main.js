@@ -12,6 +12,18 @@ var regexCamCase = /b/i;
 
 document.getElementById("mainText").innerHTML = "One day you wake up and the world as you know has ended.  The dead come to life and prey on the living. There is no hope, no cure, only survival.  Welcome to the zombie apocalypse.";
 
+// Functions
+var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures. You see a small convenience store up ahead and decide to loot it for goods."];
+
+var storyHTML = ["Lets get your information so we can start!", "Enter your Name:<br> <input type='text' name='FirstName' id='charName'/><p>Enter Your class: <b>soldier, doctor, politician</b><br><input type='text' name='charClass' id='charClass'/>", "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story"];
+
+function randomNumber(range) {
+    "use strict";
+    if (typeof range === "number") {
+        return Math.round(Math.random() * range);
+    }
+}
+
 var beginningScenarios = ["You wake up in a hospital.  It is eerily quiet.  You tiptoe to the door and peek out.", "You are standing in an open field west of a white house with a boarded front door. There is a small mailbox here.", "Desperate times call for desperate measures.  You see a small convenience store up ahead and decide to loot it for goods."];
 
 function randomNumber(range) {
