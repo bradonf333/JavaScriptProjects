@@ -2,14 +2,13 @@
 
 body {
     background: #292929;
-    color: #eaeaea;
     padding: 32px;
     font: 100% "Open Sans", Helvetica, Arial, sans-serif;
     margin: 0 auto;
     max-width: 800px;
-    text-shadow: 1px 1px 2px #9b9b9b;
+    color: #3fde9c;
+    text-shadow: 0 0 4pt #2898e0;
 }
-
 h1 {
     font-size: 1.5em;
 }
