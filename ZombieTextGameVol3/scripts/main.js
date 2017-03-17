@@ -55,19 +55,11 @@ function attackZombie(storyProgress) {
             player.health -= 5;
             storyHTML[storyProgress] += ("<br><br>You roll the zombie off you and get up. You only have " + player.health + " health left and you can barely walk. But you get up and loot the store, finding a bag of potato chips, an old soda and a first aid kit.");
             outcome = "win";
+        } else if (player.charClass === "politician") {
+            storyHTML[storyProgress] += ("<br>Being a " + player.charClass + " you quickly realize you dont have the strength to fight the zombie. Scared out of your mind you try to turn and run from the zombie, only to trip over some debri on the ground.<br><br>You get up as quickly as you can but the zombie is right behind you and lunges at you....<br><br>You have no weapon, you swing a horrible punch at the zombie, missing terribly!! <br>The zombie grabs your arm and bites a huge chunk out of it. You fall to the ground in pain. The zombie falls on top of you and bites your neck....");
+            outcome = "lose";
         }
     }
-/*
-    storyHTML[storyProgress] += ("<br>Being a " + player.charClass + " you do not have the required strength to kill the zombie.<br><br>The zombie tackles you scratching and clawing you to the ground.<br><br>You hit the ground with the zombie on top of you, hurting your leg. You look to your left and see a sharp piece of glass. You grab the glass and stab the zombie in the head.");
-    player.health -= 5;
-    storyHTML[storyProgress] += ("<br><br>You roll the zombie off you and get up. You only have " + player.health + " health left and you can barely walk. But you get up and loot the store, finding a bag of potatoe chips, an old soda and a first aid kit.");
-    outcome = "win";
-}
-/*else if (player.charClass === "politician") {
-       window.alert("Being a " + character.characterClass + " you quickly realize you dont have the strength to fight the zombie. Scared out of your mind you try to turn and run from the zombie, only to trip over some books on the ground.");
-       window.alert("You get up as quickly as you can but the zombie is right behind you and lunges at you....");
-       window.alert("You have no weapon, you swing a horrible punch at the zombie, missing terribly");
-       window.alert("The zombie grabs your arm and bites a huge chunk out of it. You fall to the ground in pain. The zombie falls on top of you and bites your neck....");*/
 }
 
 // Add event listener to the Next Button
