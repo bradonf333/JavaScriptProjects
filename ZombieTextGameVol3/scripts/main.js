@@ -9,6 +9,7 @@ var outcome;
 var storyProgress = 0;
 var player;
 var regexCamCase = /b/i;
+var randBegin;
 
 document.getElementById("mainText").innerHTML = "One day you wake up and the world as you know has ended.  The dead come to life and prey on the living. There is no hope, no cure, only survival.  Welcome to the zombie apocalypse.";
 
@@ -58,7 +59,7 @@ function GenerateInnerHTMLStory() {
             storyHTML[storyProgress] += (player.name + "<p>Lets begin....</p>");
             break;
         case 3:
-            var randNum = randomNumber(beginningScenarios.length - 1);
+            randBegin = randomNumber(beginningScenarios.length - 1);
             storyHTML[storyProgress] = beginningScenarios[randNum];
             break;
         case 4:
