@@ -62,6 +62,10 @@ function attackZombie(storyProgress) {
     }
 }
 
+function sneakZombie(storyProgress) {
+
+}
+
 // Add event listener to the Next Button
 document.getElementById("nextBtn").addEventListener("click", GenerateInnerHTMLStory);
 
