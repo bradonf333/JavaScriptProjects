@@ -38,6 +38,9 @@ document.getElementById("nextBtn").addEventListener("click", GenerateInnerHTMLSt
 
 // Generates the story in the webpage using HTML
 function GenerateInnerHTMLStory() {
+    document.getElementById("demo").innerHTML = storyHTML[storyProgress];
+    //document.getElementById("demo").innerHTML += "<br>" + storyProgress;
+    storyProgress++;
 }
 
 // Generate a random beginning
