@@ -38,7 +38,6 @@ document.getElementById("nextBtn").addEventListener("click", GenerateInnerHTMLSt
 
 // Generates the story in the webpage using HTML
 function GenerateInnerHTMLStory() {
-
     switch (storyProgress) {
         case 2:
             name = document.getElementById("charName").value;
@@ -58,11 +57,11 @@ function GenerateInnerHTMLStory() {
             break;
         case 3:
             var randNum = randomNumber(beginningScenarios.length - 1);
-            storyHTML[storyProgress] = beginningScenarios;
+            storyHTML[storyProgress] = beginningScenarios[randNum];
             break;
     }
 
-    document.getElementById("demo").innerHTML = storyHTML[storyProgress];
+    document.getElementById("mainText").innerHTML = storyHTML[storyProgress];
     //document.getElementById("demo").innerHTML += "<br>" + storyProgress;
     storyProgress++;
 }
