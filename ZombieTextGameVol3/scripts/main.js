@@ -36,6 +36,10 @@ function Character(name, health, strength, stealth, charClass) {
 // Add event listener to the Next Button
 document.getElementById("nextBtn").addEventListener("click", GenerateInnerHTMLStory);
 
+// Generates the story in the webpage using HTML
+function GenerateInnerHTMLStory() {
+}
+
 // Generate a random beginning
 window.alert(beginningScenarios[randomNumber(beginningScenarios.length - 1)]);
 
