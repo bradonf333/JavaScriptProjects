@@ -1,5 +1,14 @@
-
+// Initialize variables
+var name;
+var health = 0;
+var strength = 0;
+var stealth = 0;
+var choice;
+var charClass;
 var outcome;
+var storyProgress = 0;
+var player;
+var regexCamCase = /b/i;
 
 document.getElementById("mainText").innerHTML = "One day you wake up and the world as you know has ended.  The dead come to life and prey on the living. There is no hope, no cure, only survival.  Welcome to the zombie apocalypse.";
 
