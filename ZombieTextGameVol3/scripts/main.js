@@ -79,6 +79,7 @@ function sneakZombie(storyProgress) {
     this.storyProgress = storyProgress;
     if (player.stealth === 5) {
         storyHTML[storyProgress] = "Being a " + player.charClass + " you sneak right passed the zombie.<br>You grab some supplies off the ground including a can of refried beans, some old bottle of soda and a rusty pocket knife .";
+        outcome = "win";
     } else {
         storyHTML[storyProgress] = "You try to slip by the zombie, but you accidentally stumble over a box of glass soda bottles, alerting the zombie of your existence. It slowly turns its head and shuffles towards you.";
         if (player.charClass === "soldier") {
@@ -148,8 +149,15 @@ function GenerateInnerHTMLStory() {
             if (outcome === "win") {
                 switch (player.charClass) {
                     case "soldier":
-                        storyHTML[storyProgress] = "You grab all the supplies and head on your way. Knowing you're the baddest " + "soldier" + " around.<br><br><font size=22>YOU WIN!!</font><br><br><font size=2>Don't feel too good about yourself though, the soldier wins in all scenarios...</font><br><br>hint..hint..Play again?";
+                        storyHTML[storyProgress] = "You grab all the supplies and head on your way. Knowing you're the baddest " + player.charClass + " around.<br><br><font size=22>YOU WIN!!</font><br><br><font size=2>Don't feel too good about yourself though, the soldier wins in all scenarios...</font><br><br>Play again?";
                         break;
+                    case "doctor":
+                        storyHTML[storyProgress] = "You grab all the supplies and head on your way. Knowing you're the slickest " + player.charClass + " around.<br><br><font size=22>YOU WIN!!</font><br><br><font size=2>You should feel pretty good about yourself the " + player.charClass + " doesn't always win...</font><br><br>Play again?";
+                        break;
+                    case "politician":
+                        storyHTML[storyProgress] = "You grab all the supplies and head on your way. Knowing you're the sneakiest " + player.charClass + " around.<br><br><font size=22>YOU WIN!!</font><br><br><font size=2>Don't feel too good about yourself though, the " + player.charClass + " is weak...</font><br><br>Play again?";
+                        break;
+
                 }
             } else {
 
