@@ -18,7 +18,7 @@ var beginningScenarios = ["You wake up in a hospital. It is eerily quiet. You ti
 
 var beginningPlace = ["hospital", "white house", "store"];
 
-var storyHTML = ["Lets get your information so we can start!", "Enter your Name:<br> <input type='text' name='FirstName' id='charName'/><p>Enter Your class: <b>soldier, doctor, politician</b><br><input type='text' name='charClass' id='charClass'/>", "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former "];
+var storyHTML = ["Lets get your information so we can start!", "Enter your Name:" + createInputBox("text", "charName") + "<p>Enter Your class: <b>soldier, doctor, politician</b>" + createInputBox("text", "charClass"), "Welcome to the zombie apocalypse ", "placeholder for the beginning of the story", "The brave adventurer and former "];
 
 function randomNumber(range) {
     "use strict";
@@ -30,8 +30,7 @@ function randomNumber(range) {
 function createInputBox(type, name, id) {
     this.type = type;
     this.name = name;
-    this.id = id;
-    return "<br><input type='" + type + "' name='" + name + "' id='" + id + "'/>";
+    return "<br><input type='" + type + "' name='" + name + "' id='" + name + "'/>";
 }
 
 // Object Constructor
@@ -70,7 +69,7 @@ function GenerateInnerHTMLStory() {
             storyHTML[storyProgress] = beginningScenarios[randBegin];
             break;
         case 4:
-            storyHTML[storyProgress] += (player.charClass + " " + player.name + " enters the " + beginningPlace[randBegin] + " for some loot.  You notice a zombie slowly shuffling around amongst the destruction. <br>What action do you take?<br><b>Attack</b>, or attempt to <b>sneak</b> by the zombie?" + createInputBox("text", "randText", "randText"));
+            storyHTML[storyProgress] += (player.charClass + " " + player.name + " enters the " + beginningPlace[randBegin] + " for some loot.  You notice a zombie slowly shuffling around amongst the destruction. <br>What action do you take?<br><b>Attack</b>, or attempt to <b>sneak</b> by the zombie?" + createInputBox("text", "randText"));
             break;
     }
 
