@@ -75,8 +75,8 @@ function attackZombie(storyProgress) {
 // Tries to sneak by the zombie
 function sneakZombie(storyProgress) {
     this.storyProgress = storyProgress;
-    if (character.stealth === 5) {
-        // Add something here to sneak passed zombie
+    if (player.stealth === 5) {
+        storyHTML[storyProgress] = "Being a " + player.charClass + " you sneak right passed the zombie.<br>You grab some supplies off the ground including a can of refried beans and an old soda can.";
     }
     else {
          storyHTML[storyProgress] = "You try to slip by the zombie, but you accidentally stumble over a can of Beanie Weenies, alerting the zombie of your existence. It slowly turns its head and shuffles towards you.";
